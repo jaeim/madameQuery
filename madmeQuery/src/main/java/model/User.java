@@ -9,22 +9,37 @@ public class User {
 	private String name;
 	private String email;
 	private String phone;
+	private String university;
+	private String department;
+	private int grade;
 
 	public User() { }		// 기본 생성자
 	
-	public User(String userId, String password, String name, String email, String phone) {
+	
+
+	public User(String userId, String password, String name, String email, String phone, String university,
+			String department, int grade) {
+		super();
 		this.userId = userId;
 		this.password = password;
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
+		this.university = university;
+		this.department = department;
+		this.grade = grade;
 	}
+
+
 
 	public void update(User updateUser) {
         this.password = updateUser.password;
         this.name = updateUser.name;
         this.email = updateUser.email;
         this.phone = updateUser.phone;
+        this.university = university;
+		this.department = department;
+		this.grade = grade;
     }
 	
 	public String getUserId() {
@@ -67,6 +82,31 @@ public class User {
 		this.phone = phone;
 	}
 
+	
+	public String getUniversity() {
+		return university;
+	}
+	
+	public void setUniversity(String university) {
+		this.university = university;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public int getGrade() {
+		return grade;
+	}
+
+	public void setGrade(int grade) {
+		this.grade = grade;
+	}
+
 	/* 비밀번호 검사 */
 	public boolean matchPassword(String password) {
 		if (password == null) {
@@ -82,6 +122,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", password=" + password + ", name=" + name + ", email=" + email + ", phone="
-				+ phone + "]";
-	}	
+				+ phone + ", university=" + university + ", department=" + department + ", grade=" + grade + "]";
+	}
+
 }
